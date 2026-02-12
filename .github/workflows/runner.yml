@@ -2,8 +2,10 @@ name: Test Runner
 
 on:
   workflow_run:
-    workflows: ["CI - Vérification HTML"]
-    types: [completed]
+    workflows:
+      - "CI - Vérification HTML"
+    types:
+      - completed
 
 jobs:
   test-runner:
@@ -17,10 +19,13 @@ jobs:
       - name: Recuperation du code
         uses: actions/checkout@v3
 
-      - name: Verification
-        run: echo "Test de fonctionnement du Runner!"
+      - name: Déploiement vers serveur
+        run: |
+          sudo cp index.html /var/www/html/index.html
 
-      - name: tests de commandes
+      - name: Verification
+
+      - name: Tests de commandes
         run: |
           echo "Runner OK"
           hostname
