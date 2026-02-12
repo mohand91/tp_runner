@@ -21,7 +21,7 @@ jobs:
 
       - name: Déploiement (Mise en production)
         run: |
-          sudo cp index.html /var/www/html/index.html
+          cp index.html /var/www/html/index.html
           echo "Le site a été déployé sur $(hostname)"
 
       - name: Verification
