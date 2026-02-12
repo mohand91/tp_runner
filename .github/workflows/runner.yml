@@ -24,6 +24,7 @@ jobs:
           sudo cp index.html /var/www/html/index.html
 
       - name: Verification
+        run: echo "Test Wzb"
 
       - name: Tests de commandes
         run: |
