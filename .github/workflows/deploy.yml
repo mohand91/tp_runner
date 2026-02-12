@@ -1,9 +1,9 @@
 name: CD - Déploiement sur GitHub Pages
 
 on:
-  push:
-    branches:
-      - "main"
+  workflow_run:
+    workflows: ["CI - Vérification HTML"]
+    types: [completed]
 
 jobs:
   deploy:
