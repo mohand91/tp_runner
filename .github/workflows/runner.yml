@@ -19,12 +19,13 @@ jobs:
       - name: Recuperation du code
         uses: actions/checkout@v3
 
-      - name: Déploiement vers serveur
+      - name: Déploiement (Mise en production)
         run: |
           sudo cp index.html /var/www/html/index.html
+          echo "Le site a été déployé sur $(hostname)"
 
       - name: Verification
-        run: echo "Test Wzb"
+        run: echo "Test de fonctionnement du Runner!"
 
       - name: Tests de commandes
         run: |
